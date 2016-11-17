@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Book project</title>
+        <meta charset="utf-8" />
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed|Roboto:400,500,700,900" rel="stylesheet">
+        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        <script src="js/main.js"></script>
+   </head>
+    <body>
+        <div class="container">
+            <div class="navbar-wrapper">
+                <nav class="m-nav navbar navbar-default navbar-fixed-top z-depth-1">
+                    <div class="container">
+                        <div class="navbar-header m-header">
+                            <button type="butVton" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                            <a class="navbar-brand logo" href="#">BookEx</a>
+                        </div>
+                        <div id="navbar" class="navbar-collapse collapse">
+                            <ul class="nav navbar-nav">
+                                <li class="active"><a href="#">Home</a></li>
+                                <li><a href="#">This</a></li>
+                                <li><a href="#">Current</a></li>
+                                <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">Do nothing</a></li>
+                                    <li><a href="#">Nothing happens</a></li>
+                                    <li><a href="#">Linky link</a></li>
+                                </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+            <div class="row">
+                <section class="col-xs-12 col-md-8 top-box-xs">
+                    <div class="col-xs-12 z-depth-1 content" id="page">
+                    </div>
+                </section>
+                <aside class="col-xs-12 col-md-4 top-box-md">
+                    <div class="col-xs-12 z-depth-1 content">
+                        <p id="prev">previous</p>
+                        <p id="next">next</p>
+                    </div>
+                </aside>
+            </div>
+            <div class="row static-footer">
+                <footer class="col-xs-12 box">
+                    <div class="col-xs-12 z-depth-1 content" style="height: 50px">
+                    </div>
+                </footer>
+        </div>
+    </body>
+</html>

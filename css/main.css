@@ -1,0 +1,63 @@
+body {
+    background-color: #ececec !important;
+    font-family: "Roboto", "Roboto Condensed", sans-serif !important;
+}
+.z-depth-1 {
+    box-shadow: 0 1px 3px rgba(0,0,0,0.16), 0 2px 3px rgba(0,0,0,0.23);
+}
+
+.m-nav {
+    border: 0 !important;
+}
+
+.m-header {
+    overflow: hidden;
+}
+
+.static-footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.top-box-md {
+    margin: 15px 0;
+}
+
+@media (min-width: 992px) {
+    .top-box-md {
+        margin-top: 80px;
+        margin-bottom: 15px;
+    }
+}
+
+.top-box-xs {
+    margin-top: 80px;
+    margin-bottom: 15px;
+}
+
+.box {
+    margin: 15px 0;
+}
+
+.content {
+    background-color: #fff;
+}
+
+.page-num {
+    position: absolute;
+    bottom: 15px;
+    right: 25px;
+}
+
+.logo {
+    font-family: "roboto condensed";
+    font-size: 60px !important;
+    line-height: 38px !important;
+}
+
+#page {
+    min-height: 710px;
+    padding: 40px;
+}
