@@ -57,7 +57,7 @@ body {
     line-height: 38px !important;
 }
 
-#page {
-    min-height: 710px;
+[id*='page'] {
+    min-height: 710px !important;
     padding: 40px;
 }
