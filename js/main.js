@@ -1,17 +1,22 @@
+let book;
 let pageNum = 1;
 let currentPages;
 
 $(function() { 
+    book = location.search.split('book=')[1] ? location.search.split('book=')[1] : 0; 
+    console.log(book, typeof book);
     getData();
     registerEventListeners();
 });
 
 const getData = function() {
-    $.get('http://extracts.panmacmillan.com/getextracts', {readingtimegreaterthan: '10'}, handleData);
+   localStorage.getItem('books') 
+        ? handleData(JSON.parse(localStorage.getItem('books'))) 
+        : $.get('http://extracts.panmacmillan.com/getextracts', {readingtimegreaterthan: '10'}, handleData);
 }
 
 const handleData = function(data) {
-    const fixedData =  data.Extracts[1].extractHtml;
+    const fixedData =  data.Extracts[book].extractHtml;
     const source = $(":header", $('<div></div>').append(fixedData)).first().parent().children();
     const pages = splitIntoChunks(source, 29);
     currentPages = pages;

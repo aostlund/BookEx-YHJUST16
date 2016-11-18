@@ -25,8 +25,20 @@ body {
     margin: 15px 0;
 }
 
+
 @media (min-width: 992px) {
     .top-box-md {
+        margin-top: 80px;
+        margin-bottom: 15px;
+    }
+}
+
+.top-box-sm {
+    margin: 15px 0;
+}
+
+@media (min-width: 768px) {
+    .top-box-sm {
         margin-top: 80px;
         margin-bottom: 15px;
     }
@@ -45,6 +57,33 @@ body {
     background-color: #fff;
 }
 
+.book-content {
+    background-color: #f8f8f8;
+    color: rgba(0,0,0,0.85);
+    padding-left: 0 !important;
+    height: 410px;
+    min-width: 220px;
+}
+
+.book-content:hover {
+    box-shadow: 0 8px 16px rgba(0,0,0,0.17), 0 12px 16px rgba(0,0,0,0.23);
+}
+
+.book-content p {
+    font-family: "roboto condensed";
+    padding: 3px 10px;
+}
+
+.look-inside {
+    background: rgba(255,255,0,0.8);
+    color: rgba(0,0,0,0.8);
+    width: 100px;
+    position: absolute;
+    right: 0;
+    top: 150px;
+    height: 28px;
+}
+
 .page-num {
     position: absolute;
     bottom: 15px;
@@ -60,4 +99,9 @@ body {
 [id*='page'] {
     min-height: 710px !important;
     padding: 40px;
+}
+
+[id*='book'] img{
+    height: 335px;
+    width: 220px;
 }
