@@ -10,12 +10,12 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-        <script src="js/books.js"></script>
+        <script src="js/read.js"></script>
    </head>
     <body>
         <div class="container">
             <div class="navbar-wrapper">
-                <nav class="m-nav navbar navbar-default navbar-fixed-top content z-depth-1">
+                <nav class="m-nav navbar navbar-default navbar-fixed-top z-depth-1">
                     <div class="container">
                         <div class="navbar-header m-header">
                             <button type="butVton" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -29,41 +29,26 @@
                         <div id="navbar" class="navbar-collapse collapse">
                             <ul class="nav navbar-nav">
                                 <li class="active"><a href="index.html">Home</a></li>
-                                <li id="search"><a href="#">Search</a></li>
                             </ul>
                         </div>
                     </div>
                 </nav>
             </div>
             <div class="row">
-                <div class="col-xs-12 col-sm-6 col-md-3 top-box-xs" id="book-0">
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-3 top-box-sm" id="book-1">
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-3 top-box-md" id="book-2">
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-3 top-box-md" id="book-3">
-                </div>
+                <section class="col-xs-12 col-md-8 top-box-xs">
+                    <div class="col-xs-12 z-depth-1 content" id="page">
+                    </div>
+                </section>
+                <aside class="col-xs-12 col-md-4 top-box-md">
+                    <div class="col-xs-12 z-depth-1 content">
+                        <p id="prev">previous</p>
+                        <p id="next">next</p>
+                    </div>
+                </aside>
             </div>
-            <div class="row">
-                <div class="col-xs-12 col-sm-6 col-md-3 box" id="book-4">
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-3 box" id="book-5">
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-3 box" id="book-6">
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-3 box" id="book-7">
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-xs-12 col-sm-6 col-md-3 box" id="book-8">
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-3 box" id="book-9">
-                </div>
-            </div>
-            <div class="row">
+            <div class="row static-footer">
                 <footer class="col-xs-12 box">
-                    <div class="col-xs-12 book-content z-depth-1 book-content" style="height: 50px">
+                    <div class="col-xs-12 z-depth-1 content" style="height: 50px">
                     </div>
                 </footer>
         </div>

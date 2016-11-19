@@ -19,7 +19,7 @@ const handleData = function(data) {
         contentElement.append($('<p></p>').text(book.keynote.substring(0, 80) + '...'));
         contentElement.append($('<div class="look-inside"><p>Look Inside</p></div>'));
         contentElement.on('click', () => {
-            window.location = 'index.html?book=' + index;
+            window.location = 'read.html?book=' + index;
         })
     })
 }
