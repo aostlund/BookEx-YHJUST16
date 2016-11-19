@@ -6,6 +6,10 @@ body {
     box-shadow: 0 1px 3px rgba(0,0,0,0.16), 0 2px 3px rgba(0,0,0,0.23);
 }
 
+.z-depth-2 {
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 4px 6px rgba(0,0,0,0.24);
+}
+
 .m-nav {
     border: 0 !important;
 }
@@ -19,6 +23,10 @@ body {
     bottom: 0;
     left: 0;
     right: 0;
+}
+
+.box {
+    margin: 15px;
 }
 
 .top-box-md {
@@ -83,6 +91,52 @@ body {
     top: 150px;
     height: 28px;
 }
+
+.search {
+    margin-top: 60px;
+    background: #f8f8f8;
+    margin-bottom: -160px;
+    z-index: 10;
+    padding: 15px;
+}
+
+form {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+input {
+    width: 400px;
+    height: 30px;
+    margin: 10px !important;
+    border: 0;
+}
+
+input[type=submit] {
+    width: 90%;
+    height: 50px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.17), 0 2px 3px rgba(0,0,0,0.23);    
+}
+
+input:hover {
+    width: 420px;
+    height: 33px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.17), 0 6px 8px rgba(0,0,0,0.23);
+}
+
+input[type=submit]:hover {
+    width: 95%;
+    height: 52px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.17), 0 6px 8px rgba(0,0,0,0.23);
+}
+
+input:focus{
+    width: 420px;
+    height: 33px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.17), 0 6px 8px rgba(0,0,0,0.23);
+}
+
 
 .page-num {
     position: absolute;
