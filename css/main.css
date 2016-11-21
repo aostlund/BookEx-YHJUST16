@@ -172,6 +172,13 @@ input:focus{
     padding: 40px;
 }
 
+@media (max-width: 640px) {
+    [id*='page'] {
+        min-height: 400px !important;
+        padding:20px;
+    }
+}
+
 [id*='book'] img{
     height: 335px;
     width: 220px;

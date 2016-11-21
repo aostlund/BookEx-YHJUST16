@@ -16,9 +16,11 @@ const getData = function() {
 }
 
 const handleData = function(data) {
+    let linesPerPage = (window.matchMedia('(max-device-width: 640px)').matches) ? 10 : 29;
+    console.log(linesPerPage);
     const fixedData =  data.Extracts[book].extractHtml;
     const source = $(":header", $('<div></div>').append(fixedData)).first().parent().children();
-    const pages = splitIntoChunks(source, 29);
+    const pages = splitIntoChunks(source, linesPerPage);
     currentPages = pages;
     $('#page').append(pages[pageNum]);
     $('#page').append($('<p class="page-num"></p>').text(pageNum));
@@ -53,6 +55,7 @@ const registerEventListeners = function() {
 
 const nextPage = function() {
     let prevPage = pageNum;
+    let height = $('#page-' + prevPage).outerHeight();
     pageNum += 1;
     if (pageNum >= currentPages.length) {
         pageNum = currentPages.length - 1;
@@ -66,7 +69,7 @@ const nextPage = function() {
         $('body').css('overflow-y', 'hidden'); // removes scroll to stop graphical resizing glitch
         $('section').append(nextPage);
         $('#page-' + prevPage).animate({top: '-1000'}, 1000, () => { $('#page-' + prevPage).remove() });
-        $('#page-' + pageNum).animate({top: '-710'}, 1000, () => { 
+        $('#page-' + pageNum).animate({top: '-' + height}, 1000, () => { 
             $('#page-' + pageNum).css('top', '0px');
             $('body').css('overflow-y', 'auto'); // re-enables scroll
         });
@@ -75,6 +78,7 @@ const nextPage = function() {
 
 const prevPage = function() {
     let prevPage = pageNum;
+    let height = $('#page-' + prevPage).outerHeight();
     pageNum -= 1;
     if (pageNum < 1) {
         pageNum = 1;
@@ -87,7 +91,7 @@ const prevPage = function() {
         nextPage.append($('<p class="page-num"></p>').text(pageNum));
         $('body').css('overflow-y', 'hidden'); // removes scroll to stop graphical resizing glitch
         $('section').prepend(nextPage);
-        $('#page-' + prevPage).css('top', '-710px');
+        $('#page-' + prevPage).css('top', '-' + height + 'px');
         $('#page-' + prevPage).animate({top: '200'}, 1000, () => { $('#page-' + prevPage).remove() });
         $('#page-' + pageNum).animate({top: '0'}, 1000, () => { 
             $('#page-' + pageNum).css('top', '0px');
