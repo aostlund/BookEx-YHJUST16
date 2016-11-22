@@ -1,10 +1,10 @@
 let book;
 let pageNum = 1;
 let currentPages;
+let fontSize = 14;
 
 $(function() { 
     book = location.search.split('book=')[1] ? location.search.split('book=')[1] : 0; 
-    console.log(book, typeof book);
     getData();
     registerEventListeners();
 });
@@ -17,7 +17,6 @@ const getData = function() {
 
 const handleData = function(data) {
     let linesPerPage = (window.matchMedia('(max-device-width: 640px)').matches) ? 10 : 29;
-    console.log(linesPerPage);
     const fixedData =  data.Extracts[book].extractHtml;
     const source = $(":header", $('<div></div>').append(fixedData)).first().parent().children();
     const pages = splitIntoChunks(source, linesPerPage);
@@ -51,6 +50,7 @@ const splitIntoChunks = function(source, maxLinesInChunk) {
 const registerEventListeners = function() {
     $('#next').on('click', () => nextPage());
     $('#prev').on('click', () => prevPage());
+    $('#font-size').on('change', updateFontSize);
 }
 
 const nextPage = function() {
@@ -66,6 +66,7 @@ const nextPage = function() {
         nextPage.attr('id', 'page-' + pageNum);
         nextPage.append(currentPages[pageNum]);
         nextPage.append($('<p class="page-num"></p>').text(pageNum));
+        nextPage.find('p').css('font-size', fontSize);
         $('body').css('overflow-y', 'hidden'); // removes scroll to stop graphical resizing glitch
         $('section').append(nextPage);
         $('#page-' + prevPage).animate({top: '-1000'}, 1000, () => { $('#page-' + prevPage).remove() });
@@ -89,6 +90,7 @@ const prevPage = function() {
         nextPage.attr('id', 'page-' + pageNum);
         nextPage.append(currentPages[pageNum]);
         nextPage.append($('<p class="page-num"></p>').text(pageNum));
+        nextPage.find('p').css('font-size', fontSize);
         $('body').css('overflow-y', 'hidden'); // removes scroll to stop graphical resizing glitch
         $('section').prepend(nextPage);
         $('#page-' + prevPage).css('top', '-' + height + 'px');
@@ -98,4 +100,10 @@ const prevPage = function() {
             $('body').css('overflow-y', 'auto'); // re-enables scroll
         });
     }
+}
+
+const updateFontSize = function() {
+    fontSize = Number($('#font-size').val());
+    $('[id*=page-]>p').css('font-size', fontSize);
+    $('output[name=font-out]').val(fontSize);
 }

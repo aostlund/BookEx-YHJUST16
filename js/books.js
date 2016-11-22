@@ -30,8 +30,8 @@ const registerListeners = function() {
 
 const showSearch = function() {
     if (!searchIsActive) {
-        let authorSearch = $('<div><p>Author</p><input name="authorcontains" type="text" placeholder="Author name or part of it"/></div>');
-        let titleSearch = $('<div><p>Title</p><input name="titlecontains" type="text" placeholder="Title or part of it"/></div>');
+        let authorSearch = $('<div><p>Author</p><input name="authorcontains" type="search" placeholder="Author name or part of it"/></div>');
+        let titleSearch = $('<div><p>Title</p><input name="titlecontains" type="search" placeholder="Title or part of it"/></div>');
         let startDate = $('<div><p>Start Date</p><input name="publicationdategreaterthan" type="date" placeholder="Start date"/></div>');
         let endDate = $('<div><p>End Date</p><input name="publicationdatelessthan" type="date" placeholder="End date"/></div>');
         let leastReadingTime = $('<div><p>Minimum reading time</p><input name="readingtimegreaterthan" type="text" pattern="[0-9]{3}" placeholder="Minimum reading time in minutes"/></div>');
