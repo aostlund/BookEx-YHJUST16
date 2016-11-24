@@ -47,7 +47,7 @@ body {
     margin: 15px 0;
 }
 
-@media (max-width: 450px) {
+@media (max-width: 450px), (max-height: 450px){
     .static-footer {
         display: none;
     }
@@ -66,6 +66,7 @@ body {
 .top-box-xs {
     margin-top: 80px;
     margin-bottom: 15px;
+    padding-bottom: 20%;
 }
 
 @media (max-width: 768px) {
@@ -238,7 +239,7 @@ input[type=range]::-webkit-slider-runnable-track {
     }
 }
 
-@media (max-width: 450px) {
+@media (max-width: 450px), (max-height: 450px) {
     [id*='page'] {
         min-height: 300px !important;
         padding:20px;

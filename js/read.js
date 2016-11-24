@@ -1,7 +1,7 @@
 let book;
 let pageNum = 1;
 let currentPages;
-let fontSize = (window.matchMedia('(max-device-width: 450px)').matches) ? 12 : 14;
+let fontSize = (window.matchMedia('(max-device-width: 450px)').matches) || (window.matchMedia('(max-device-height: 450px)')).matches ? 12 : 14;
 
 $(function() { 
     book = location.search.split('book=')[1] ? location.search.split('book=')[1] : 0; 
@@ -75,6 +75,7 @@ const nextPage = function() {
             $('#page-' + pageNum).css('top', '0px');
             $('body').css('overflow-y', 'auto'); // re-enables scroll
         });
+        $('html, body').animate({scrollTop: 0});
     }
 }
 
@@ -100,6 +101,7 @@ const prevPage = function() {
             $('#page-' + pageNum).css('top', '0px');
             $('body').css('overflow-y', 'auto'); // re-enables scroll
         });
+        $('html, body').animate({scrollTop: 0});
     }
 }
 
