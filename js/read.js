@@ -1,12 +1,13 @@
 let book;
 let pageNum = 1;
 let currentPages;
-let fontSize = 14;
+let fontSize = (window.matchMedia('(max-device-width: 450px)').matches) ? 12 : 14;
 
 $(function() { 
     book = location.search.split('book=')[1] ? location.search.split('book=')[1] : 0; 
     getData();
     registerEventListeners();
+    updateFontSize(null, fontSize);    
 });
 
 const getData = function() {
@@ -102,8 +103,9 @@ const prevPage = function() {
     }
 }
 
-const updateFontSize = function() {
-    fontSize = Number($('#font-size').val());
+const updateFontSize = function(event, size) {
+    console.log(size);
+    fontSize = size ? size : Number($('#font-size').val());
     $('[id*=page-]>p').css('font-size', fontSize);
     $('output[name=font-out]').val(fontSize);
 }

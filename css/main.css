@@ -52,7 +52,7 @@ body {
         display: none;
     }
     aside {
-        bottom: 5px !important;
+        bottom: -15px !important;
     }
 }
 
@@ -234,6 +234,13 @@ input[type=range]::-webkit-slider-runnable-track {
 @media (max-width: 640px) {
     [id*='page'] {
         min-height: 400px !important;
+        padding:20px;
+    }
+}
+
+@media (max-width: 450px) {
+    [id*='page'] {
+        min-height: 300px !important;
         padding:20px;
     }
 }
