@@ -34,10 +34,15 @@ const splitIntoChunks = function(source, maxLinesInChunk) {
     for (let i = 0; i < source.length; i++) {
         let linesInP = $(source[i]).text().split(" ").length / 16; 
         if (Math.ceil(numLines + linesInP) > maxLinesInChunk || $(':header', $('<div></div>').append(source[i])).length) {
-            newArray.push(chunkArray);
-            chunkArray = [];
-            numLines = $('.chapter-number', $('<div></div>').append(source[i])).length ? 6 : Math.ceil(linesInP + 1); //headers are larger and takes up more space so we add more lines
-            chunkArray.push(source[i]);
+            if (!$(':header', $('<div></div>').append(source[i-1])).length) { // Chapter starts might have two headers (chapter-number and chapter-title). We want them on same page
+                newArray.push(chunkArray);                                    // so only add if previous line wasn't a header
+                chunkArray = [];
+                numLines = $(':header', $('<div></div>').append(source[i])).length ? 3 : Math.ceil(linesInP + 1); //headers are larger and takes up more space so we add more lines
+                chunkArray.push(source[i]);
+            } else {
+                numLines = $(':header', $('<div></div>').append(source[i])).length ? 6 : Math.ceil(linesInP + 1); //headers add 2x lines as this only runs when pages starts with two headers
+                chunkArray.push(source[i]);
+            }
         } else {
             numLines += Math.ceil(linesInP + 1);
             chunkArray.push(source[i]);
