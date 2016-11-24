@@ -74,12 +74,10 @@ const nextPage = function() {
         nextPage.append(currentPages[pageNum]);
         nextPage.append($('<p class="page-num"></p>').text(pageNum));
         nextPage.find('p').css('font-size', fontSize);
-        $('body').css('overflow-y', 'hidden'); // removes scroll to stop graphical resizing glitch
         $('section').append(nextPage);
         $('#page-' + prevPage).animate({top: '-1000'}, 1000, () => { $('#page-' + prevPage).remove() });
         $('#page-' + pageNum).animate({top: '-' + height}, 1000, () => { 
             $('#page-' + pageNum).css('top', '0px');
-            $('body').css('overflow-y', 'auto'); // re-enables scroll
         });
         $('html, body').animate({scrollTop: 0});
     }
@@ -99,13 +97,11 @@ const prevPage = function() {
         nextPage.append(currentPages[pageNum]);
         nextPage.append($('<p class="page-num"></p>').text(pageNum));
         nextPage.find('p').css('font-size', fontSize);
-        $('body').css('overflow-y', 'hidden'); // removes scroll to stop graphical resizing glitch
         $('section').prepend(nextPage);
         $('#page-' + prevPage).css('top', '-' + height + 'px');
         $('#page-' + prevPage).animate({top: '200'}, 1000, () => { $('#page-' + prevPage).remove() });
         $('#page-' + pageNum).animate({top: '0'}, 1000, () => { 
             $('#page-' + pageNum).css('top', '0px');
-            $('body').css('overflow-y', 'auto'); // re-enables scroll
         });
         $('html, body').animate({scrollTop: 0});
     }
