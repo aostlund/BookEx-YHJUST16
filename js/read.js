@@ -1,13 +1,14 @@
 let book;
 let pageNum = 1;
 let currentPages;
-let fontSize = (window.matchMedia('(max-device-width: 450px)').matches) || (window.matchMedia('(max-device-height: 450px)')).matches ? 12 : 14;
+let fontSize = (window.matchMedia('(max-device-width: 450px)').matches) || (window.matchMedia('(max-device-height: 768px)')).matches ? 12 : 14;
 
 $(function() { 
     book = location.search.split('book=')[1] ? location.search.split('book=')[1] : 0; 
     getData();
     registerEventListeners();
     updateFontSize(null, fontSize);    
+    setMinPageHeight();
 });
 
 const getData = function() {
@@ -114,4 +115,8 @@ const updateFontSize = function(event, size) {
     fontSize = size ? size : Number($('#font-size').val());
     $('[id*=page-]>p').css('font-size', fontSize);
     $('output[name=font-out]').val(fontSize);
+}
+
+const setMinPageHeight = function() {
+    $('[id*=page]').css('min-height', (window.screen.height * 0.65) + 'px')
 }
