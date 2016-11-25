@@ -307,3 +307,26 @@ input[type=range]::-webkit-slider-runnable-track {
 .page-control:hover {
     box-shadow: 0 4px 8px rgba(0,0,0,0.17), 0 6px 8px rgba(0,0,0,0.23);
 }
+
+#footer {
+    height: 50px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.partition {
+    border-left: 2px solid #fffff6;
+    margin: 7px 0 15px 0;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.23);
+}
+
+.footer-info {
+    margin-top: 22px;
+    font-size: 11px;
+    color: rgba(0,0,0,0.75);
+}
+
+.footer-info a {
+    color: rgba(0,0,0,0.75);
+    text-decoration: none;
+}
