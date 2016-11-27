@@ -29,6 +29,7 @@ const registerListeners = function() {
 } 
 
 const showSearch = function() {
+    $('#navbar').collapse('hide');
     if (!searchIsActive) {
         let authorSearch = $('<div><p>Author</p><input name="authorcontains" type="search" placeholder="Author name or part of it"/></div>');
         let titleSearch = $('<div><p>Title</p><input name="titlecontains" type="search" placeholder="Title or part of it"/></div>');

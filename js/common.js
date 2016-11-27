@@ -8,6 +8,7 @@ const bindEventListeners = function() {
 
 const openAbout = function(event) {
     event.preventDefault();
+    $('#navbar').collapse('hide');
     let content = createAbout();
     if (document.getElementsByClassName('about').length !== 0) {
         document.body.removeChild(document.getElementsByClassName('about')[0]);
