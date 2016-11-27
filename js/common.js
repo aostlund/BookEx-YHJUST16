@@ -9,19 +9,28 @@ const bindEventListeners = function() {
 const openAbout = function(event) {
     event.preventDefault();
     $('#navbar').collapse('hide');
-    let content = createAbout();
     if (document.getElementsByClassName('about').length !== 0) {
+        document.body.removeChild(document.getElementsByClassName('darken')[0]);
         document.body.removeChild(document.getElementsByClassName('about')[0]);
     } else  {
+        let darken = document.createElement('div');
+        darken.setAttribute('class', 'darken');
+        darken.addEventListener('click', openAbout);
+        document.body.appendChild(darken);
+        let content = createAbout();
         let about = document.createElement('div');
         about.setAttribute('class', 'about');
         about.innerHTML += content.innerHTML;
         document.body.appendChild(about);
+        document.getElementById('close').addEventListener('click', openAbout);
     }
 }
 
 const createAbout = function() {
     let content = document.createElement('div');
+    let close = document.createElement('div');
+    close.setAttribute('class', 'close');
+    close.innerHTML = '<i class="material-icons" id="close">clear</i>';
     let logo = document.createElement('p');
     logo.setAttribute('class', 'about-logo');
     logo.innerHTML += 'Book<span>Ex</span>';
@@ -51,6 +60,7 @@ const createAbout = function() {
     footer.innerHTML += email.outerHTML;
     footer.innerHTML += linkedin.outerHTML;
     footer.innerHTML += github.outerHTML;
+    content.innerHTML += close.outerHTML;
     content.innerHTML += logo.outerHTML;
     content.innerHTML += whatIsIt.outerHTML;
     content.innerHTML += whatIsItText.outerHTML;

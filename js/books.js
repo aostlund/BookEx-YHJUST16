@@ -31,6 +31,9 @@ const registerListeners = function() {
 const showSearch = function() {
     $('#navbar').collapse('hide');
     if (!searchIsActive) {
+        $('body').append($('<div class="darken"></div>'));
+        $('.darken').on('click', showSearch);
+        let close = $('<div class="close"><i class="material-icons" id="close">clear<i></div>');
         let authorSearch = $('<div><p>Author</p><input name="authorcontains" type="search" placeholder="Author name or part of it"/></div>');
         let titleSearch = $('<div><p>Title</p><input name="titlecontains" type="search" placeholder="Title or part of it"/></div>');
         let startDate = $('<div><p>Start Date</p><input name="publicationdategreaterthan" type="date" placeholder="Start date"/></div>');
@@ -41,10 +44,12 @@ const showSearch = function() {
         let form = $('<form></form>').append(authorSearch, titleSearch, startDate, endDate, leastReadingTime, mostReadingTime, submitButton);
         form.on('submit', searchBooks);
         let search = $('<div class="col-xs-12"><div class="col-xs-12 search z-depth-2"></div></div>');
-        $('.search', search).append(form);
+        $('.search', search).append(close, form);
         $('.row').first().prepend(search);
+        $('#close').on('click', showSearch);
         searchIsActive = true;
     } else {
+        $('.darken').remove();
         $('.search').parent().remove();
         searchIsActive = false;
     }

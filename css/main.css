@@ -153,13 +153,13 @@ body {
     background: #fffff6;
     margin-bottom: -160px;
     z-index: 10;
-    padding: 15px;
 }
 
 form {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
+    margin: 15px;
 }
 
 form p {
@@ -389,4 +389,23 @@ span {
     font-size: 12px;
     margin-top: 18px;
     color: rgba(0,0,0,0.9);
+}
+
+.close {
+    width: 100%;
+    text-align: right;
+    height: 0;
+}
+
+#close {
+    margin: 10px;
+}
+
+.darken {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: rgba(0,0,0,0.6);
 }
