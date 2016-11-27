@@ -330,3 +330,12 @@ input[type=range]::-webkit-slider-runnable-track {
     color: rgba(0,0,0,0.75);
     text-decoration: none;
 }
+
+.about {
+    position: fixed;
+    height: 400px;
+    top: 100px;
+    left: 50px;
+    right: 50px;
+    background: #fffff6;
+}
