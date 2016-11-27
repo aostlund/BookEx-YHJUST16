@@ -252,8 +252,9 @@ input[type=range]::-webkit-slider-runnable-track {
 
 .logo {
     font-family: "roboto condensed";
+    font-weight: 100;
     font-size: 60px !important;
-    line-height: 38px !important;
+    line-height: 35px !important;
 }
 
 .content[id*='page-'] {
@@ -338,4 +339,8 @@ input[type=range]::-webkit-slider-runnable-track {
     left: 50px;
     right: 50px;
     background: #fffff6;
+}
+
+span {
+    font-weight: 500;
 }
