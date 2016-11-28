@@ -60,6 +60,7 @@ const searchBooks = function(event) {
     const searchData = $('form').serialize();
     $.get('http://extracts.panmacmillan.com/getextracts?' + searchData, (data) => {
         if (data.Extracts.length !== 0) {
+            $('.darken').remove();
             $('div[id*=book-]').children().remove();
             handleData(data);
             $('.search').parent().remove();
