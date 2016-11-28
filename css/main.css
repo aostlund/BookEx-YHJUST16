@@ -422,3 +422,7 @@ span {
     font-family: "roboto condensed";
     font-weight: 100;
 }
+
+.navbar-nav li:hover {
+    box-shadow: 0 2px 6px rgba(0,0,0,0.17), 0 4px 6px rgba(0,0,0,0.23);
+}
