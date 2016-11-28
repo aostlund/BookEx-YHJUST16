@@ -409,3 +409,11 @@ span {
     right: 0;
     background: rgba(0,0,0,0.6);
 }
+
+.not-found {
+    text-align: center;
+    padding-top: 5px;
+    font-size: 16px;
+    font-family: "roboto condensed";
+    font-weight: 100;
+}

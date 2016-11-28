@@ -55,6 +55,7 @@ const showSearch = function() {
 
 const searchBooks = function(event) {
     event.preventDefault();
+    $('.not-found').remove();
     const searchData = $('form').serialize();
     $.get('http://extracts.panmacmillan.com/getextracts?' + searchData, (data) => {
         if (data.Extracts.length !== 0) {
@@ -64,6 +65,7 @@ const searchBooks = function(event) {
             $('.search').parent().remove();
             searchIsActive = false;
         } else {
+            $('.search').prepend($('<div class="not-found"><p>No search results found</p></div>'));
             //show "not found" and clear fields
         }
     });
