@@ -1,5 +1,3 @@
-let searchIsActive = false;
-
 $(function() {
     getData();
     registerListeners();
@@ -30,7 +28,8 @@ const registerListeners = function() {
 
 const showSearch = function() {
     $('#navbar').collapse('hide');
-    if (!searchIsActive) {
+    if ($('.search').length === 0) {
+        $('.about').first() ? $('.about').first().remove() : null;
         $('body').append($('<div class="darken"></div>'));
         $('.darken').on('click', showSearch);
         let close = $('<div class="close"><i class="material-icons" id="close">clear<i></div>');
@@ -51,7 +50,6 @@ const showSearch = function() {
     } else {
         $('.darken').remove();
         $('.search').parent().remove();
-        searchIsActive = false;
     }
 }
 

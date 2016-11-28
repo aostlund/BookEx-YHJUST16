@@ -10,9 +10,13 @@ const openAbout = function(event) {
     event.preventDefault();
     $('#navbar').collapse('hide');
     if (document.getElementsByClassName('about').length !== 0) {
-        document.body.removeChild(document.getElementsByClassName('darken')[0]);
+        let deleteDarken = document.getElementsByClassName('darken');
+        while(deleteDarken.length > 0) {
+            document.body.removeChild(deleteDarken[0]);
+        }
         document.body.removeChild(document.getElementsByClassName('about')[0]);
     } else  {
+        document.getElementsByClassName('search')[0] ? document.getElementsByClassName('search')[0].parentElement.remove() : null;
         let darken = document.createElement('div');
         darken.setAttribute('class', 'darken');
         darken.addEventListener('click', openAbout);
