@@ -4,7 +4,10 @@ $(function() {
 });
 
 const getData = function() {
-    $.get('http://extracts.panmacmillan.com/getextracts', {readingtimegreaterthan: '10'}, handleData);
+   localStorage.getItem('books') 
+        ? handleData(JSON.parse(localStorage.getItem('books'))) 
+        : $.get('http://extracts.panmacmillan.com/getextracts', {readingtimegreaterthan: '10'}, handleData);
+   // $.get('http://extracts.panmacmillan.com/getextracts', {readingtimegreaterthan: '10'}, handleData);
 }
 
 const handleData = function(data) {
@@ -66,7 +69,6 @@ const searchBooks = function(event) {
             searchIsActive = false;
         } else {
             $('.search').prepend($('<div class="not-found"><p>No search results found</p></div>'));
-            //show "not found" and clear fields
         }
     });
 }

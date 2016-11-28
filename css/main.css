@@ -261,6 +261,11 @@ input[type=range]::-webkit-slider-runnable-track {
     padding: 40px;
 }
 
+.content[id*='page-'] img {
+    max-width: 100%;
+    opacity: .5;
+}
+
 @media (max-width: 640px) {
     .content[id*='page-'] {
         padding:20px;
