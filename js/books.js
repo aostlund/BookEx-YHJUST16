@@ -40,8 +40,8 @@ const showSearch = function() {
         let titleSearch = $('<div><p>Title</p><input name="titlecontains" type="search" placeholder="Title or part of it"/></div>');
         let startDate = $('<div><p>Start Date</p><input name="publicationdategreaterthan" type="date" placeholder="Start date"/></div>');
         let endDate = $('<div><p>End Date</p><input name="publicationdatelessthan" type="date" placeholder="End date"/></div>');
-        let leastReadingTime = $('<div><p>Minimum reading time</p><input name="readingtimegreaterthan" type="text" pattern="[0-9]{3}" placeholder="Minimum reading time in minutes"/></div>');
-        let mostReadingTime = $('<div><p>Maximum reading time</p><input name="readingtimelessthan" type="text" pattern="[0-9]{3}" placeholder="Maximum reading time in minutes"/></div>');
+        let leastReadingTime = $('<div><p>Minimum reading time</p><input name="readingtimegreaterthan" type="text" pattern="[0-9]*" placeholder="Minimum reading time in minutes"/></div>');
+        let mostReadingTime = $('<div><p>Maximum reading time</p><input name="readingtimelessthan" type="text" pattern="[0-9]*" placeholder="Maximum reading time in minutes"/></div>');
         let submitButton = $('<input type="submit"/>');
         let form = $('<form></form>').append(authorSearch, titleSearch, startDate, endDate, leastReadingTime, mostReadingTime, submitButton);
         form.on('submit', searchBooks);

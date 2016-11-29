@@ -15,9 +15,9 @@ body {
     padding-bottom: 5%;
 }
 
-.m-nav {
-    border: 0 !important;
-    background-color: #fffff6 !important;
+.navbar-wrapper>.m-nav {
+    border: 0;
+    background-color: #fffff6;
 }
 
 #navbar>.navbar-center {
@@ -36,7 +36,7 @@ body {
 }
 
 .static-footer {
-    margin: 0 !important;
+    margin: 0;
     position: fixed;
     bottom: -10px;
     left: 0;
@@ -71,12 +71,27 @@ body {
     margin: 15px 0;
 }
 
+@media (min-width: 768px) and (max-width: 992px) {
+    aside#control-box {
+        position: fixed;
+        bottom: 65px;
+        width: 750px !important;
+    }
+}
+
+@media (max-width: 768px) {
+    aside#control-box {
+        position: fixed;
+        bottom: 65px;
+    }
+}
+
 @media (max-width: 450px), (max-height: 450px){
     .static-footer {
         display: none;
     }
-    aside {
-        bottom: -15px !important;
+    aside#control-box {
+        bottom: -15px;
     }
 }
 
@@ -102,29 +117,14 @@ body {
     }
 }
 
-@media (max-width: 768px) {
-    aside {
-        position: fixed !important;
-        bottom: 65px;
-    }
-}
-
-@media (min-width: 768px) and (max-width: 992px) {
-    aside {
-        position: fixed !important;
-        bottom: 65px;
-        width: 750px !important;
-    }
-}
-
 .content {
     background-color: #fffff6;
 }
 
-.book-content {
+[id*=book-]>.book-content {
     background-color: #fffff6;
     color: rgba(0,0,0,0.85);
-    padding-left: 0 !important;
+    padding-left: 0;
     height: 410px;
     min-width: 220px;
 }
@@ -234,8 +234,8 @@ input[type=range] {
     margin: 5px;
 }
 
-output {
-    display: inline-block !important;
+p>output {
+    display: inline-block;
 }
 
 input[type=range]::-webkit-slider-runnable-track {
@@ -250,11 +250,11 @@ input[type=range]::-webkit-slider-runnable-track {
     right: 25px;
 }
 
-.logo {
+.navbar-brand.logo {
     font-family: "roboto condensed";
     font-weight: 100;
-    font-size: 60px !important;
-    line-height: 35px !important;
+    font-size: 60px;
+    line-height: 35px;
 }
 
 .content[id*='page-'] {
