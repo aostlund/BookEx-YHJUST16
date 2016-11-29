@@ -1,0 +1,47 @@
+= Book'''Ex''' =
+=== &ensp;&ensp; ABOUT THE PROJECT ===
+----
+
+:::: '''WHAT IS IT?'''
+:::::: BookEx is a web app to look through book excerpts. It uses [http://panmacmillan.com panmacmillan.com] open API for book excerpts.
+
+:::: '''WHY IS IT?'''
+:::::: This is the final project in the course "HTML, CSS, JavaScript & web standards". That is a part of [https://www.lernia.se/utbildning/distans/data-och-it/javascriptutvecklare-frontend-26659 "JavaScript developer - Frontend" Education by Lernia].
+
+:::: '''PROJECT CRITERIA'''
+:::::* All code written by me
+:::::* Have at least one custom HTML, CSS and Js file
+:::::* Use Bootstrap for at least one part
+:::::* Use media query thats not part of Bootstrap
+:::::* Use jquery for at least two dom-manipulations
+:::::* Use vanilla js for at least one dom-manipulation
+:::::* Create a styled form
+:::::* Use HTML5 elements where semanticly applicable
+:::::* Menu that scale according to screen size
+:::::* Design and function should work in harmony
+:::::* Look good on at least three screen sizes
+
+:::: '''WORK PROCESS'''
+:::::: I started the project Desktop first approach but with a good idea of what the mobile version should look like. Having a simple idea for the reading-part, with just a simple page and a control-box to flip through the pages, it was quite easy to realize how it must work on both mobile and desktop.    
+
+:::::: The book-browsing part was a simple layout of 4 columns per row on desktop, 1 on mobile and 2 on the intermideate size screens.
+
+:::::: Bootstrap was used for most of the structure and for the menu. Some parts use flex-box for easier responsivness without the need for hard breakpoints.
+
+:::::: After initial layout work javascript functions where added for page "turning", searching for books, tweaking font-size and number of lines per page, changing font-size and opening and closing search/about. Then tweaking of the design with both CSS, JavaScript to go well on as many screen-sizes as possible.
+	
+:::: '''THOUGHTS'''
+::::::The look and function of the page is pretty close to what i had planned. I think I was successfull in achieving a design that makes it easy to understand how to navigate and use the functions.
+
+:::::: What I'm finding a bit bad is the hackiness of media queries to make it work on a few different phone-screen-sizes. It should not need to be that complicated. Probably a reason to go Mobile first in the future.
+
+:::::: Also the javascript uses to many globals and is mutating a them inside functions. This might not be a big problem in this small app but it's not a good way to start an app if I choose to develop it further.
+
+:::::: There are some things which I like to add or redo if working I continue to work on this. The biggest one is to not create search and about in javascript (Did it now as it was, sort of, part of the criteria). Another one is to add infinite-scroll to book page (now it only shows the first ten results). Perhaps solve the scaling to different screen-sizes with less media-queries.
+----
+=== &ensp;&ensp; CONTACT ===
+----
+:::: '''E-MAIL'''
+:::::: [mailto:andreas.ostlund@spelpunkten.com]
+:::: '''LINKEDIN'''
+:::::: [https://www.linkedin.com/in/andreas-östlund-4294546 My LinkedIn Profile]
