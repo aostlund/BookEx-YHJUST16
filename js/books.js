@@ -50,7 +50,7 @@ const registerListeners = function() {
 const showSearch = function() {
     $('#navbar').collapse('hide');
     if ($('.search').length === 0) {
-        $('.about').first() ? $('.about').first().remove() : null;
+        if ($('.about').first()) $('.about').first().remove();
         $('body').append($('<div class="darken"></div>'));
         $('.darken').on('click', showSearch);
         let close = $('<div class="close"><i class="material-icons" id="close">clear<i></div>');

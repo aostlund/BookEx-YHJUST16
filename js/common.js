@@ -29,7 +29,7 @@ const openAbout = function(event) {
         }
         document.body.removeChild(document.getElementsByClassName('about')[0]);
     } else  {
-        document.getElementsByClassName('search')[0] ? document.getElementsByClassName('search')[0].parentElement.remove() : null; //This should be an if statement
+        if (document.getElementsByClassName('search')[0]) document.getElementsByClassName('search')[0].parentElement.remove();
         let darken = document.createElement('div');
         darken.setAttribute('class', 'darken');
         darken.addEventListener('click', openAbout);
