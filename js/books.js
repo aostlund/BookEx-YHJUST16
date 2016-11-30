@@ -1,15 +1,27 @@
+/*------------------------------------------
+ books.js - Main code for book-listing-page
+------------------------------------------*/
+
+/*-------------------------------------------------------------
+ Dom is ready so we get book data and register event listeners.
+-------------------------------------------------------------*/
 $(function() {
     getData();
     registerListeners();
 });
 
+/*------------------------------------------------------------------------------------
+ If we have already stored data we send that to handleData, else we do a "default" GET.
+------------------------------------------------------------------------------------*/
 const getData = function() {
    localStorage.getItem('books') 
         ? handleData(JSON.parse(localStorage.getItem('books'))) 
         : $.get('http://extracts.panmacmillan.com/getextracts', {readingtimegreaterthan: '10'}, handleData);
-   // $.get('http://extracts.panmacmillan.com/getextracts', {readingtimegreaterthan: '10'}, handleData);
 }
 
+/*--------------------------------------------------------------------------------------------------------------
+ Read each entry and create a book "card" for them. Add click event that directs to reading page for that book. 
+--------------------------------------------------------------------------------------------------------------*/
 const handleData = function(data) {
     localStorage.setItem('books', JSON.stringify(data));
     data.Extracts.forEach((book, index) => {
@@ -25,10 +37,16 @@ const handleData = function(data) {
     })
 }
 
+/*---------------------------------------
+ Register listener for search menu item.
+---------------------------------------*/
 const registerListeners = function() {
     $('#search').on('click', showSearch);
 } 
 
+/*-------------------------------------------------------------------------------------------------------
+ Build search-box, put div over background that darken and add click event to it that closes search-box.
+-------------------------------------------------------------------------------------------------------*/
 const showSearch = function() {
     $('#navbar').collapse('hide');
     if ($('.search').length === 0) {
@@ -49,13 +67,15 @@ const showSearch = function() {
         $('.search', search).append(close, form);
         $('.row').first().prepend(search);
         $('#close').on('click', showSearch);
-        searchIsActive = true;
     } else {
         $('.darken').remove();
         $('.search').parent().remove();
     }
 }
 
+/*--------------------------------------------------------------------------------------------------
+ Search for books by entered criteria, if found update book-cards else show that nothing was found.
+--------------------------------------------------------------------------------------------------*/
 const searchBooks = function(event) {
     event.preventDefault();
     $('.not-found').remove();
@@ -66,7 +86,6 @@ const searchBooks = function(event) {
             $('div[id*=book-]').children().remove();
             handleData(data);
             $('.search').parent().remove();
-            searchIsActive = false;
         } else {
             $('.search').prepend($('<div class="not-found"><p>No search results found</p></div>'));
         }

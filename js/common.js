@@ -1,14 +1,27 @@
+/*----------------------------------------------------------------------
+ common.js - Handles about functionality, mostly written in vanilla JS.
+----------------------------------------------------------------------*/ 
+
+/*-----------------------------------------------------------
+ DOM is ready (uses jquery) and we register event listeners.
+-----------------------------------------------------------*/
 $(function() {
     bindEventListeners();
 });
 
+/*--------------------------------------
+ Adds event listener to about menu item
+--------------------------------------*/
 const bindEventListeners = function() {
     document.getElementById('about').addEventListener('click', openAbout);
 }
 
+/*-----------------------------------------------------------
+ Open and closes the about page and also creates part of it.
+-----------------------------------------------------------*/
 const openAbout = function(event) {
     event.preventDefault();
-    $('#navbar').collapse('hide');
+    $('#navbar').collapse('hide'); //Jquery collapse used (bootstrap navbar)
     if (document.getElementsByClassName('about').length !== 0) {
         let deleteDarken = document.getElementsByClassName('darken');
         while(deleteDarken.length > 0) {
@@ -16,7 +29,7 @@ const openAbout = function(event) {
         }
         document.body.removeChild(document.getElementsByClassName('about')[0]);
     } else  {
-        document.getElementsByClassName('search')[0] ? document.getElementsByClassName('search')[0].parentElement.remove() : null;
+        document.getElementsByClassName('search')[0] ? document.getElementsByClassName('search')[0].parentElement.remove() : null; //This should be an if statement
         let darken = document.createElement('div');
         darken.setAttribute('class', 'darken');
         darken.addEventListener('click', openAbout);
@@ -30,6 +43,9 @@ const openAbout = function(event) {
     }
 }
 
+/*---------------------------------------------------------
+ Creates the about-box, this is not a good way to do this.
+---------------------------------------------------------*/
 const createAbout = function() {
     let content = document.createElement('div');
     let close = document.createElement('div');
