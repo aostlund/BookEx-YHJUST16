@@ -12,7 +12,7 @@ let fontSize = (window.matchMedia('(max-device-width: 450px)').matches) || (wind
  register eventlisteners, update the font-size and set minimum page height.
 --------------------------------------------------------------------------*/
 $(function() { 
-    book = location.search.split('book=')[1] ? location.search.split('book=')[1] : 0; // This should use an or (||) instead.
+    book = location.search.split('book=')[1] || 0;
     getData();
     registerEventListeners();
     updateFontSize(null, fontSize);    
@@ -137,7 +137,7 @@ const prevPage = function() {
  Updates font-size by reading value of slider when it changes, or setting it to the size variable if it exists.
 --------------------------------------------------------------------------------------------------------------*/
 const updateFontSize = function(event, size) {
-    fontSize = size ? size : Number($('#font-size').val()); //Should use or. Again :(
+    fontSize = size || Number($('#font-size').val());
     $('[id*=page-]>p').css('font-size', fontSize);
     $('output[name=font-out]').val(fontSize);
 }
