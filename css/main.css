@@ -82,6 +82,7 @@ body {
     padding-left: 0;
     height: 410px;
     min-width: 220px;
+    cursor: pointer;
 }
 
 .book-content:hover {
@@ -307,6 +308,7 @@ span {
     background-color: grey;
     color: white;
     box-shadow: 0 1px 3px rgba(0,0,0,0.17), 0 2px 3px rgba(0,0,0,0.23);
+    cursor: pointer;
 }
 
 .page-control:hover {
@@ -327,6 +329,7 @@ input[type=range]::-webkit-slider-thumb {
     height: 20px;
     border-radius: 50%;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.17), 0 2px 3px rgba(0,0,0,0.23); 
+    cursor: pointer;
 }
 
 input[type=range]::-webkit-slider-thumb:hover {
