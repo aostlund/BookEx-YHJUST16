@@ -75,8 +75,8 @@ const splitIntoChunks = function(source, maxLinesInChunk) {
  Register event handlers for previous, next and font-size controls.
 ------------------------------------------------------------------*/
 const registerEventListeners = function() {
-    $('#next').on('click', () => nextPage()); //These should not use anonymous functions
-    $('#prev').on('click', () => prevPage());
+    $('#next').on('click', nextPage);
+    $('#prev').on('click', prevPage);
     $('#font-size').on('change', updateFontSize);
 }
 
