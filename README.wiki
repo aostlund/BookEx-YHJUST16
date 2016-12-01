@@ -24,7 +24,7 @@
 :::: '''WORK PROCESS'''
 :::::: I started the project Desktop first approach but with a good idea of what the mobile version should look like. Having a simple idea for the reading-part, with just a simple page and a control-box to flip through the pages, it was quite easy to realize how it must work on both mobile and desktop.    
 
-:::::: The book-browsing part was a simple layout of 4 columns per row on desktop, 1 on mobile and 2 on the intermideate size screens.
+:::::: The book-browsing part was a simple layout of 4 columns per row on desktop, 1 on mobile and 2 on the intermediate size screens.
 
 :::::: Bootstrap was used for most of the structure and for the menu. Some parts use flex-box for easier responsivness without the need for hard breakpoints.
 
@@ -35,7 +35,7 @@
 
 :::::: What I'm finding a bit bad is the hackiness of media queries to make it work on a few different phone-screen-sizes. It should not need to be that complicated. Probably a reason to go Mobile first in the future.
 
-:::::: Also the javascript uses to many globals and is mutating a them inside functions. This might not be a big problem in this small app but it's not a good way to start an app if I choose to develop it further.
+:::::: Also the javascript uses to many globals and is mutating them inside functions. This might not be a big problem in this small app but it's not a good way to start an app if I choose to develop it further.
 
 :::::: There are some things which I like to add or redo if working I continue to work on this. The biggest one is to not create search and about in javascript (Did it now as it was, sort of, part of the criteria). Another one is to add infinite-scroll to book page (now it only shows the first ten results). Perhaps solve the scaling to different screen-sizes with less media-queries.
 ----
