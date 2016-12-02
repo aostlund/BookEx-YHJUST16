@@ -3,7 +3,7 @@
 ----
 
 :::: '''WHAT IS IT?'''
-:::::: BookEx is a web app to look through book excerpts. It uses [http://panmacmillan.com panmacmillan.com] open API for book excerpts.
+:::::: BookEx is a web app to look through book excerpts [http://bookex.aostlund.com (Demo-page)]. It uses [http://panmacmillan.com panmacmillan.com] open API for book excerpts.
 
 :::: '''WHY IS IT?'''
 :::::: This is the final project in the course "HTML, CSS, JavaScript & web standards". That is a part of [https://www.lernia.se/utbildning/distans/data-och-it/javascriptutvecklare-frontend-26659 "JavaScript developer - Frontend" Education by Lernia].
